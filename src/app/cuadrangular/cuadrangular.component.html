@@ -1,0 +1,69 @@
+<div class="container custom-container-2">
+  <div>
+    <h3 class="mb-3 text-center">EQUIPOS</h3>
+    <tbody>
+      <td>
+        <input type="number" [(ngModel)]="numeroEquipos" [min]="2" class="form-control" placeholder="numeroEquipos"
+          required>
+      </td>
+      <td>
+        <span class="btn btn-success btn-lg btn-block" (click)="cargarLiga(numeroEquipos)">Crear liga</span>
+      </td>
+    </tbody>
+
+  </div>
+  <div *ngIf="Liga.length !== 0">
+    <h3 class="mb-3 text-center">CUADRANGULAR</h3>
+    <h3 class="col-md-12">Puntos:</h3>
+    <h3 class="col-md-12">Ganador -> 3 ptos</h3>
+    <h3 class="col-md-12">Empate -> 2 ptos</h3>
+    <h3 class="col-md-12">Perdedor -> 1 ptos</h3>
+    <div class="col-md-12">
+      <table class="table table-bordered">
+        <tbody>
+          <tr *ngFor="let liga of Liga.ligaList">
+            <td>
+              VS
+            </td>
+            <td *ngFor="let partido of liga.partidoList">
+              {{ partido.nombre }}
+              <input type="number" [(ngModel)]="partido.puntuacion" [min]="2" class="form-control"
+                placeholder="Resultado" required>
+            </td>
+          </tr>
+          <td>
+            <span class="btn btn-success btn-lg btn-block" (click)="guardarResultado(Liga)">Guardar resultados</span>
+          </td>
+        </tbody>
+      </table>
+    </div>
+
+  </div>
+
+  <div *ngIf="Equipo.length !== 0">
+    <h3 class="mb-3 text-center">PUNTOS</h3>
+
+    <div class="col-md-12">
+      <table class="table table-bordered">
+        <thead>
+          <tr>
+            <th scope="col">Nombre equipo</th>
+            <th scope="col">Puntos</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let equipo of Equipo">
+            <td>
+              {{ equipo.nombre }}
+            </td>
+            <td>
+              {{ equipo.puntuacion }}
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+  </div>
+
+</div>
