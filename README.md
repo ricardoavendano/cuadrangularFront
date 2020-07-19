@@ -5,8 +5,10 @@ Proyecto generado con: [Angular CLI](https://github.com/angular/angular-cli) ver
 ## Pasos para compilar
 
 #1. Descargar el backend para que funcionen los consumos de servicios
+https://github.com/ricardoavendano/cuadrangular
 
 #2. Clonar el proyeto localmente
+https://github.com/ricardoavendano/cuadrangularFront.git
 
 #3. Ir a la carpeta de descarga e instalar dependencias del servidor
 npm install
